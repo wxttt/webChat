@@ -1,0 +1,24 @@
+doctype 5
+html(lang = "cn")
+	head
+		title #{title}
+		link(rel = 'shortcut icon', href = '/favicon.ico', type = 'image/x-icon')
+		link(rel = 'stylesheet', href = '/static/css/webChat.css', type = 'text/css')
+		meta(http-equiv = 'Content-Type', content = 'text/html;charset=utf-8')
+		meta(name = 'author', content = 'wxttt')
+	body
+		h2	Web Chat
+		div#chat-box.clearfix
+			div#count	在线人数：
+				span#number	0
+			div#messages-box.clearfix
+			textarea#send-box
+		script(type = 'text/javascript', src = '/static/js/helper.js')
+		script(type = 'text/javascript', src = '/socket.io/socket.io.js')
+		script(type = 'text/javascript', src = 'static/js/main.js')
+		script(type = 'text/javascript', src = '/static/js/core.js')
+		script(type = 'text/javascript', src = '/static/js/facade.js')
+		script(type = 'text/javascript', src = '/static/js/modules.js')
+
+
+

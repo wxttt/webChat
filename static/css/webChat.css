@@ -1,0 +1,10 @@
+body{font-size:14px;background-color:#f6f3f0;color:#6d6867;font-family:'Microsoft Yahei','微软雅黑','宋体','Helvetica Neue',Helvetica Arial,sans-serif;letter-spacing:.1em}
+h2{font-size:24px;text-align:center}
+.clearfix:after{content:'.';height:0;visibility:hidden;display:block;clear:both}
+#chat-box{width:680px;margin:0 auto;border-radius:3px;border:1px solid #dddbdb;padding:10px;position:relative;}
+#chat-box #count{padding:3px 0;text-indent:1em;width:180px;text-align:left;right:0;position:absolute;border:1px solid #dddbdb}
+#send-box{width:664px;height:80px;padding:5px 8px;resize:none;border:none;outline:none}
+#messages-box{width:664px;height:400px;}
+#messages-box .message{border:1px solid #dddbdb;padding:3px;clear:both;margin-bottom:3px}
+.left{float:left}
+.right{float:right}
