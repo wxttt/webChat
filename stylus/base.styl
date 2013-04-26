@@ -1,0 +1,65 @@
+body
+	font-size 14px
+	background-color #f6f3f0
+	color darkGray
+	font-family 'Microsoft Yahei','微软雅黑','宋体','Helvetica Neue',Helvetica Arial,sans-serif
+	letter-spacing: 0.1em;
+
+h2
+	font-size 24px 
+	text-align center
+
+.clearfix
+	&:after
+		content '.'
+		height 0
+		visibility hidden
+		display block
+		clear both
+
+#chat-box
+	width 680px
+	margin 0 auto
+	border-radius 3px
+	border 1px solid gray
+	padding 10px
+	box-shadow(0 0 5px 5px lightBlack)
+	position relative
+	#count
+		padding 3px 0
+		text-indent 1em
+		width 180px
+		text-align left
+		right 0
+		position absolute
+		border 1px solid gray
+
+#send-box
+	width 664px
+	height 80px
+	padding 5px 8px
+	resize none
+	border none
+	outline none
+
+#messages-box
+	width 100%
+	height 400px
+	overflow-y scroll
+	.message
+		border 1px solid gray
+		padding 3px 4px 4px 4px
+		clear both
+		margin-bottom 3px
+		border-radius(4px)
+		color black
+		&.blue
+			gradient-bg(blue,lightBlue)
+		&.purple
+			gradient-bg(purple,lightPurple)
+
+.left
+	float left
+
+.right
+	float right

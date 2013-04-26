@@ -25,6 +25,7 @@ app.core.define('#messages-box', function(f){
 
 			$message.appendChild($name);
 			$message.appendChild($text);
+			$message.className = 'message left blue';
 
 			$messagesBox.appendChild($message);
 		}
@@ -105,4 +106,21 @@ app.core.define('socket', function(f){
 	}
 });
 
-app.core.startAll();
+app.core.define('user', function(f){
+	var $number;
+
+	return {
+		init: function(){
+			$number = f.$('number')
+
+			f.subscribe({
+				'setCount': this.setCount
+			});
+		},
+		setCount: function(data){
+			$number.innerHTML = data;
+		}
+	}
+});
+
+app.core.startAll();	
