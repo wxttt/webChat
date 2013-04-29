@@ -7,7 +7,7 @@
 
 			return {
 				publish: function(e){
-					events.trigger(e);
+					return events.trigger(e);
 				},
 				subscribe: function(e){
 					events.register(e, module);

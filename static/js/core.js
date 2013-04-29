@@ -15,6 +15,7 @@
 				var id;
 				for(id in data){
 					if(data.hasOwnProperty(id)){
+						console.log('start ', id);
 						this.start(id);
 					}
 				}
@@ -35,9 +36,9 @@
 					for(mod in data){
 						if(data.hasOwnProperty(mod)){
 							mod = data[mod];
-							console.log(mod);
 							if(mod.events && mod.events[events.type]){
-								mod.events[events.type](events.data);
+								console.log('trigger', events.type);
+								return mod.events[events.type](events.data);
 							}
 						}
 					}

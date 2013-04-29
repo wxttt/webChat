@@ -1,6 +1,6 @@
 body
 	font-size 14px
-	background-color #f6f3f0
+	background-color cyan
 	color darkGray
 	font-family 'Microsoft Yahei','微软雅黑','宋体','Helvetica Neue',Helvetica Arial,sans-serif
 	letter-spacing: 0.1em;
@@ -8,6 +8,7 @@ body
 h2
 	font-size 24px 
 	text-align center
+	color darkWhite
 
 .clearfix
 	&:after
@@ -22,9 +23,11 @@ h2
 	margin 0 auto
 	border-radius 3px
 	border 1px solid gray
+	background-color lightGray
 	padding 10px
 	box-shadow(0 0 5px 5px lightBlack)
 	position relative
+	z-index 2
 	#count
 		padding 3px 0
 		text-indent 1em
@@ -32,7 +35,7 @@ h2
 		text-align left
 		right 0
 		position absolute
-		border 1px solid gray
+		//border 1px solid gray
 
 #send-box
 	width 664px
@@ -40,17 +43,21 @@ h2
 	padding 5px 8px
 	resize none
 	border none
+	border-top 2px solid darkGray
 	outline none
 
 #messages-box
 	width 100%
 	height 400px
+	padding-top 5px
 	overflow-y scroll
+	background-color white
 	.message
-		border 1px solid gray
 		padding 3px 4px 4px 4px
 		clear both
-		margin-bottom 3px
+		margin 0 5px 4px 5px
+		border 1px solid gray
+		box-shadow(0 0 1px 1px lightBlack)
 		border-radius(4px)
 		color black
 		&.blue
@@ -63,3 +70,10 @@ h2
 
 .right
 	float right
+
+
+#canvas
+	position fixed
+	left 0
+	top 0
+	z-index 1

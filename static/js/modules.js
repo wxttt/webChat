@@ -50,7 +50,11 @@ app.core.define('#send-box', function(f){
 		},
 		sendMessage: function(e){
 			if(e.ctrlKey === true && e.keyCode === 13){
-				name = 'ttt';
+				name = f.publish({
+					type: 'getUser',
+					data: ''
+				});
+
 				message = $sendBox.value;
 				f.publish({
 					type: 'sendMessage',
@@ -87,7 +91,6 @@ app.core.define('socket', function(f){
 			});
 		},
 		renderMessage: function(data){
-			console.log('render message data is', data);
 			f.publish({
 				type: 'renderMessage', 
 				data: data
@@ -100,27 +103,43 @@ app.core.define('socket', function(f){
 			});
 		},
 		sendMessage: function(data){
-			console.log('sendMessage data is', data);
 			socket.emit('message', data.name, data.message);
 		}
 	}
 });
 
 app.core.define('user', function(f){
-	var $number;
+	var $number,
+		user;
 
 	return {
 		init: function(){
-			$number = f.$('number')
+			var temp;
+			$number = f.$('number');
 
 			f.subscribe({
-				'setCount': this.setCount
+				'setCount': this.setCount,
+				'setUser': this.setUser,
+				'getUser': this.getUser
 			});
+
+			temp = prompt('请输入名字');
+			f.publish({
+				type: 'setUser',
+				data: temp
+			})
+
 		},
 		setCount: function(data){
 			$number.innerHTML = data;
+		},
+		setUser: function(data){
+			user = data; 
+		},
+		getUser: function(){
+			return user;
 		}
 	}
 });
 
-app.core.startAll();	
+
