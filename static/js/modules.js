@@ -134,6 +134,8 @@ app.core.define('user', function(f){
 			$number.innerHTML = data;
 		},
 		setUser: function(data){
+			var animation = document.getElementsByTagName('h2')[0];
+			animation.id = 'animation';
 			user = data; 
 		},
 		getUser: function(){

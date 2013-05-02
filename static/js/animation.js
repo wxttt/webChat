@@ -1,4 +1,4 @@
-app.core.define('bgAnimation', function(f){
+app.core.define('snow', function(f){
     var canvas = f.$('canvas'),
         ctx = canvas.getContext("2d"),
         W,
@@ -7,19 +7,25 @@ app.core.define('bgAnimation', function(f){
     return {
         init: function(){
             console.log('begin');
-            canvas.width = W = window.innerWidth;
-            canvas.height = H = window.innerHeight;
+            this.resizeCanvas();
 
             f.subscribe({
-                'startSnow': this.startSnow().start
+                'startSnow': this.snow().start,
+                'stopSnow': this.snow().stop
             });
 
             f.publish({
                 type: 'startSnow',
                 data: ''
             });
+
+            f.bind(window, 'resize', this.resizeCanvas)
         },
-        startSnow: function(){
+        resizeCanvas: function(){
+            canvas.width = W = window.innerWidth;
+            canvas.height = H = window.innerHeight;
+        },
+        snow: function(){
             var particles = [],
                 mp = 45,
                 i,
